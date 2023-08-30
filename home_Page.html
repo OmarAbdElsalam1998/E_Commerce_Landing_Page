@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#4285f4" />
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>home page</title>
+
+    <style>
+
+
+        /* Global style */
+
+            *{
+                box-sizing: border-box;
+            }
+            @font-face {
+                font-family: "cairo-bold";
+                src: url(assets/fonts/Cairo-Bold.ttf);
+            }
+            @font-face {
+                font-family: "cairo-medium";
+                src: url(assets/fonts/Cairo-Medium.ttf);
+            }
+            :root{
+                --main-color: #2b284d;
+                --secondary-color: #5956e9;
+                --bg-color: #4b73f4;
+            }
+            body{
+                background-color: #f5f9f9;
+                margin: 0;
+                padding: 0;
+                direction: rtl;
+            }
+            a{
+                text-decoration: none;
+                display: block;
+            }
+            .primary-button{
+                display:block;  
+                padding: 15px 20px;
+                outline: none;
+                border: none;
+                min-width: 150px;
+                border-radius: 10px;
+                background-color: var(--secondary-color);
+                color: #FFF;
+                text-align: center;
+                margin: 0 10px;
+                text-decoration: none;
+                font-family:"cairo-bold";
+
+            }
+            .secondary-button{
+                display:block;  
+                padding: 15px 20px;
+                min-width: 120px;
+                outline: none;
+                border: none;
+                min-width: 150px;
+
+                border-radius: 10px;
+                background-color: #FFF;
+                color: var(--main-color);
+                text-align: center;
+                margin: 0 10px;
+                text-decoration: none;
+                font-family:"cairo-bold";
+
+            }
+            .section-header {
+                text-align: start;
+            
+                position: relative;
+                padding: 10px;
+                margin-bottom: 30px;
+                font-family: "cairo-bold";
+                font-size: 1.6rem;
+            }
+            .section-header::before {
+                content: "";
+                position: absolute;
+                bottom: 0px;
+                right: 60px;
+                width: 60px;
+                height: 4px;
+                background: var(--bg-color);
+            }
+            .section-header::after {
+                content: "";
+                position: absolute;
+                bottom: 0px;
+                right: 10px;
+                width: 30px;
+                height: 4px;
+                background: var(--bg-color);
+            }
+
+        /* Global Style */
+        /* Container style */
+          .container {
+                padding: 10px;
+                margin: auto;
+            }
+             @media (max-width: 576px) {
+            .container {
+                width: 100%;
+            }
+            }
+             @media (min-width: 576px) {
+            .container {
+                max-width: 540px;
+            }
+            }
+            @media (min-width: 768px) {
+             .container {
+                max-width: 720px;
+            }
+            }
+            @media (min-width: 992px) {
+             .container {
+                max-width: 960px;
+            }
+            }
+            @media (min-width: 1200px) {
+             .container {
+                max-width: 1140px;
+            }
+            }
+            @media (min-width: 1400px) {
+             .container {
+                max-width: 1320px;
+            }
+            }
+            @media (min-width: 1600px) {
+             .container {
+                max-width: 1500px;
+            }
+            }
+            @media (min-width: 1800px) {
+             .container {
+                max-width: 1680px;
+            }
+            }
+            @media (min-width: 2000px) {
+             .container {
+                max-width: 1860px;
+            }
+            }
+
+            /* End Container Style */
+
+
+           
+
+            /* Start header style */
+            .main-header{
+                padding: 10px 0;
+                background-color: var(--main-color);
+            }
+            .main-header .flex-box{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .main-header .flex-box .logo img{
+                max-height: 50px;
+            }
+            .main-header  .flex-box >div:first-child{
+                width: 30%;
+            }
+            .main-header  .flex-box .box{
+                width: 70%;
+                display: flex;
+                justify-content: end;
+            }
+            @media (max-width:992px) {
+            .main-header  .flex-box >div:first-child{
+                width: 50%;
+            }
+            .main-header  .flex-box .box{
+                width: 60%;
+                justify-content: end;
+            }
+
+            .primary-button,
+            .secondary-button{
+                min-width:90px;
+                padding: 10px 0;
+              }
+
+            }
+            /* End Header style */
+
+
+            /* Start Categories section */ 
+            .categories .flex-box{
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .categories .flex-box .category{
+                text-align: center;
+                width: 25%;
+                padding: 10px;
+                margin-top: -40px;
+            }
+            @media (max-width:992px) {
+
+            .categories .flex-box .category{
+                width: 50%;
+              
+            }
+            }
+            
+            .categories .cat-image{
+                width: 140px;
+                height: 140px;
+                border-radius: 50%;
+                padding: 10px;
+                background: #FFF;
+                border: 10px solid #f5f9f9;
+                margin: auto;
+                transform: translateY(40px);
+                overflow: hidden;
+                transition: all .4s ease-in-out;
+
+            }
+            .categories .cat-image img{
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+               
+            }
+            .categories .cat-name{
+                background-color: #FFF;
+                padding: 50px 10px 30px 10px;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 1px 10px 22px 2px #2555b31f;
+                font-family:"cairo-bold";
+                font-size: 1.3rem;
+                color: var(--main-color);
+                transition: all .4s ease-in-out;
+
+            }
+            .categories .category:hover .cat-name{
+                background: var(--secondary-color);
+                color: #FFF;
+            }
+            .categories .category:hover .cat-image{
+                transform: translate(40px,40px) rotate(49deg);
+            }
+            /* End Categories section */ 
+
+
+
+
+            /* Start products section */
+            .products{
+                padding: 40px 0;
+            }
+            .products .flex-box{
+                display: flex;
+                flex-wrap: wrap;
+                padding: 50px 0;
+            }
+            .products .flex-box .box{
+                width: 25%;
+                padding: 10px;
+                
+            }
+           
+            .products .flex-box .product{
+                padding: 25px 10px;
+                background-color: #FFF;
+                border-radius: 10px;
+                text-align: center;
+                
+            }
+                
+        
+            .products .product .product-image{
+                width: 100%;
+            }
+            .products .product .product-image img{
+                width: 100%;
+                height: 300px;
+            }
+            .products .product .product-info h4{
+                font-family: "cairo-medium";
+                color: var(--main-color);
+            }
+
+            @media (max-width:992px) {
+
+            .products {
+                padding: 0;
+
+            }
+            .products .flex-box {
+                padding: 10px 0;
+
+            }
+            .products .flex-box .box{
+                width: 50%;
+
+            }
+            }
+            /* End Products section  */
+
+
+
+            /* start footer section style */
+
+            .footer{
+                background-color: var(--main-color);
+                padding: 10px 0;
+            }
+            .footer .flex-box{
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+            }
+            .footer .flex-box >div{
+                width: 50%;
+            
+                
+            }
+           
+            .footer .copyrights span{
+                font-family: "cairo-medium";
+                color:#FFF
+            }
+            .footer .social-media{
+                display: flex;
+                justify-content: end;
+            }
+            .footer .social-media ul{
+                list-style: none;
+                padding: 0;
+                margin: 0;
+               
+            }
+            .footer .social-media ul li{
+                padding: 10px;
+                display: inline-block;
+               
+            }
+            .footer .social-media ul li a{
+                font-family: "cairo-medium";
+                color:#FFF;
+                display: block;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background: var(--secondary-color);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                
+               
+            }
+            .footer .social-media ul li a img{
+                z-index: 3
+            }
+            .footer .social-media ul li a::before{
+                content: "";
+                position: absolute;
+                background: #4a78ff21;
+                width: 0;
+                height: 0;
+                border-radius: 50%;
+                z-index: 1;
+                transition: all .4s ease-in-out;
+
+
+            }
+            .footer .social-media ul li:hover a::before{
+                width: 140%;
+                    height: 140%;
+            }
+
+            @media (max-width:992px) {
+            .footer .flex-box{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+             .footer .flex-box >div{
+                width: 100%;
+                text-align: center;
+                margin: auto;
+
+            }
+            .footer .social-media ul{
+                margin: 10px auto;
+            }
+            }
+            
+
+          
+
+        
+
+            /* end footer section style */
+
+
+
+
+    </style>
+</head>
+<body>
+
+
+    <!-- Start header section -->
+    <header class="main-header">
+        <div class="container">
+            <div class="flex-box">
+                <div class="logo">
+                    <img src="assets/images/logo.webp" loading="lazy" alt="logo">
+                </div>
+                <div class="box">
+                        <a href="" class="primary-button contact-us">إتصل بنا</a>
+                         <a href="" class="secondary-button offers">العروض</a>
+                    </div>
+            </div>
+        </div>
+
+    </header> 
+    <!-- End header section -->
+
+
+     <!-- Start Categories section -->
+     <section class="categories">
+        <div class="container">
+            <div class="flex-box">
+                <div class="category">
+                    <a href="" class="category-box">
+                        <div class="cat-image">
+                            <img src="assets/images/category.webp" loading="lazy" alt="القسم">
+                        </div>
+                        <div class="cat-name">
+                            <span>القسم</span>
+
+
+                        </div>
+                        
+                    </a>
+                </div>
+                <div class="category">
+                    <a href="" class="category-box">
+                        <div class="cat-image">
+                            <img src="assets/images/category.webp" loading="lazy" alt="القسم">
+                        </div>
+                        <div class="cat-name">
+                            <span>القسم</span>
+
+
+                        </div>
+                        
+                    </a>
+                </div>
+                <div class="category">
+                    <a href="" class="category-box">
+                        <div class="cat-image">
+                            <img src="assets/images/category.webp" loading="lazy" alt="القسم">
+                        </div>
+                        <div class="cat-name">
+                            <span>القسم</span>
+
+
+                        </div>
+                        
+                    </a>
+                </div>
+                <div class="category">
+                    <a href="" class="category-box">
+                        <div class="cat-image">
+                            <img src="assets/images/category.webp" loading="lazy" alt="القسم">
+                        </div>
+                        <div class="cat-name">
+                            <span>القسم</span>
+
+
+                        </div>
+                        
+                    </a>
+                </div>
+                <div class="category">
+                    <a href="" class="category-box">
+                        <div class="cat-image">
+                            <img src="assets/images/category.webp" loading="lazy" alt="القسم">
+                        </div>
+                        <div class="cat-name">
+                            <span>القسم</span>
+
+
+                        </div>
+                        
+                    </a>
+                </div>
+                <div class="category">
+                    <a href="" class="category-box">
+                        <div class="cat-image">
+                            <img src="assets/images/category.webp" loading="lazy" alt="القسم">
+                        </div>
+                        <div class="cat-name">
+                            <span>القسم</span>
+
+
+                        </div>
+                        
+                    </a>
+                </div>
+                <div class="category">
+                    <a href="" class="category-box">
+                        <div class="cat-image">
+                            <img src="assets/images/category.webp" loading="lazy" alt="القسم">
+                        </div>
+                        <div class="cat-name">
+                            <span>القسم</span>
+
+
+                        </div>
+                        
+                    </a>
+                </div>
+                <div class="category">
+                    <a href="" class="category-box">
+                        <div class="cat-image">
+                            <img src="assets/images/category.webp" loading="lazy" alt="القسم">
+                        </div>
+                        <div class="cat-name">
+                            <span>القسم</span>
+
+
+                        </div>
+                        
+                    </a>
+                </div>
+            </div>
+        </div>
+
+     </section> 
+     <!-- End Categories section -->
+
+
+
+
+     <!-- Start products section -->
+
+    <section class="products">
+        <div class="container">
+            <h4 class="section-header">المنتجات</h4>
+            <div class="flex-box">
+                
+
+                <!-- Start product card -->
+                <div class="box">
+                    <div class="product">
+                        <a href="https://aswaqkheirzaman.com/product/%D8%B2%D8%AC%D8%A7%D8%AC%D8%A9-%D9%85%D9%8A%D8%A7%D8%A9-%D8%A7%D9%83%D9%88%D8%A7%D9%81%D9%8A%D9%86%D8%A7-600-%D9%84%D8%AA%D8%B1/">
+                            <div class="product-image">
+                                <img src="assets/images/product.webp" loading="lazy" alt="">
+                            </div>
+                            <div class="product-info">
+                                <h4>زجاجة مياه اكوافينا </h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- End product card -->
+
+                <!-- Start product card -->
+                <div class="box">
+                    <div class="product">
+                        <a href="https://aswaqkheirzaman.com/product/%D8%B2%D8%AC%D8%A7%D8%AC%D8%A9-%D9%85%D9%8A%D8%A7%D8%A9-%D8%A7%D9%83%D9%88%D8%A7%D9%81%D9%8A%D9%86%D8%A7-600-%D9%84%D8%AA%D8%B1/">
+                            <div class="product-image">
+                                <img src="assets/images/product.webp" loading="lazy" alt="">
+                            </div>
+                            <div class="product-info">
+                                <h4>زجاجة مياه اكوافينا </h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- End product card -->
+
+                <!-- Start product card -->
+                <div class="box">
+                    <div class="product">
+                        <a href="https://aswaqkheirzaman.com/product/%D8%B2%D8%AC%D8%A7%D8%AC%D8%A9-%D9%85%D9%8A%D8%A7%D8%A9-%D8%A7%D9%83%D9%88%D8%A7%D9%81%D9%8A%D9%86%D8%A7-600-%D9%84%D8%AA%D8%B1/">
+                            <div class="product-image">
+                                <img src="assets/images/product.webp" loading="lazy" alt="">
+                            </div>
+                            <div class="product-info">
+                                <h4>زجاجة مياه اكوافينا </h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- End product card -->
+
+                <!-- Start product card -->
+                <div class="box">
+                    <div class="product">
+                        <a href="https://aswaqkheirzaman.com/product/%D8%B2%D8%AC%D8%A7%D8%AC%D8%A9-%D9%85%D9%8A%D8%A7%D8%A9-%D8%A7%D9%83%D9%88%D8%A7%D9%81%D9%8A%D9%86%D8%A7-600-%D9%84%D8%AA%D8%B1/">
+                            <div class="product-image">
+                                <img src="assets/images/product.webp" loading="lazy" alt="">
+                            </div>
+                            <div class="product-info">
+                                <h4>زجاجة مياه اكوافينا </h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- End product card -->
+               
+            </div>
+
+        </div>
+    </section>
+
+
+     <!-- End Product Section -->
+
+
+
+     <!-- Start footer section -->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="flex-box">
+                <div class="copyrights">
+                    <span>
+                        جميع الحقوق محفوظة لمتجر ... 2023
+                    </span>
+
+                </div>
+                <div class="social-media">
+                    <ul>
+                        <li>
+                            <a href="https://www.facebook.com">
+                                <img src="assets/images/facebook_icon.webp" loading="lazy" alt="facebook">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.twitter.com">
+                                <img src="assets/images/twitter.webp" loading="lazy" alt="twitter">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com">
+                                <img src="assets/images/instagram.webp" loading="lazy" alt="instagram">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/+998 55 178 3434">
+                                <img src="assets/images/whatsapp.webp" loading="lazy" alt="whatsapp">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+     <!-- End Footer section -->
+    
+</body>
+</html>
